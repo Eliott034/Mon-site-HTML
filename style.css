@@ -1,0 +1,191 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0f172a;
+    color: #e2e8f0;
+    padding-top: 60px; /* correspond à la hauteur de la nav */
+}
+
+section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #1e293b;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    animation: fadeIn 0.8s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1{
+text-align: center;
+margin-top: 40px;
+font-size: 36px;
+color: #3b82f6;
+}
+
+h2{
+    color: #3b82f6;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+a {
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+nav {
+    position: fixed;       /* reste en haut quand on scroll */
+    top: 0;
+    width: 100%;
+    background-color: #1e293b;
+    padding: 10px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    z-index: 1000;         /* pour qu’elle soit au-dessus du contenu */
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ef4444;        /* accent rouge pour le hover */
+}
+
+/* Section À propos */
+.apropos-flex {
+    margin: 40px auto;
+    max-width: 900px;
+    padding: 25px;
+    background-color: #1e293b;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* Titre au-dessus */
+.apropos-flex h2 {
+    text-align: left;      /* titre aligné à gauche */
+    color: #3b82f6;
+    margin-bottom: 25px;
+}
+
+/* Contenu texte + photo */
+.apropos-content {
+    display: flex;
+    flex-direction: row;       
+    align-items: flex-start;   
+    gap: 30px;                 
+    flex-wrap: nowrap;         
+}
+
+/* Texte */
+.apropos-content ul {
+    flex: 1;             
+    min-width: 250px;    
+    list-style: none;
+    padding-left: 0;
+}
+
+.apropos-content ul li {
+    margin-bottom: 10px;
+}
+
+/* Photo rectangle */
+.apropos-content .photo {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;        
+    border-radius: 8px;       
+    border: 2px solid #3b82f6;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+/* Responsive pour mobile */
+@media (max-width: 600px) {
+    .apropos-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .apropos-content .photo {
+        width: 70%;
+        height: auto;
+    }
+}
+
+/* ===== Responsive pour écrans < 600px ===== */
+@media (max-width: 600px) {
+
+    /* Barre de navigation en colonne */
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    /* Sections : moins de marge et padding */
+    section {
+        margin: 20px 10px;
+        padding: 15px;
+    }
+
+    /* À propos : empiler texte et photo */
+    .apropos-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    /* Photo plus petite sur mobile */
+    .apropos-content .photo {
+        width: 70%;
+        height: auto;
+    }
+
+    /* Titres un peu plus petits */
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+}
+
+.intro-phrase {
+    text-align: center;   /* centre le texte */
+    font-size: 18px;      /* optionnel : taille du texte */
+    color: #f0f0f0;       /* optionnel : couleur */
+    margin-top: 10px;     /* petit espace au-dessus */
+}
